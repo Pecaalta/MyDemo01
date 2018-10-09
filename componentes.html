@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <title></title>
+    <style>
+      body {
+
+        background-color: #f0f0f0;
+      }
+      .box-cards-center {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+      .main {
+        box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+        background-color: #fff;
+        border-radius: 3px;
+        padding: 0;
+        max-width: 1000px;
+        margin: 10px auto;
+      }
+      .cards-propuestas {
+        border: solid 1px #eee;
+        border-radius: 3px;
+        box-shadow: 0px 1px 5px 0px rgba(0,0,0,.05);
+        margin: 10px;
+        width: 300px;
+        transition: all .5s;
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+      }
+      .cards-propuestas:hover {
+        box-shadow: 0px 3px 6px -2px rgba(0,0,0,.2);
+      }
+      /* cards propuestas body */
+      .cards-propuestas .body {
+        padding: 20px;
+      }
+
+      .cards-propuestas p {
+        color: #aaa;
+      }
+
+      .estado div{
+        display: flex;
+        padding: 0;
+      }
+
+      .estado div span{
+        display: inline-block;
+        background: red;
+        width: 20%;
+        height: 5px;
+        margin: 0 4px 0 0;
+        border-radius: 3px;
+      }
+
+      .estado[data-estado="0"]::before { content: "Ingresada"; }
+      .estado[data-estado="1"]::before { content: "Progreso"; }
+      .estado[data-estado="2"]::before { content: "finalisada"; }
+      .estado[data-estado="3"]::before { content: "en financiacion"; }
+      .estado[data-estado="4"]::before { content: "no fincanciada"; }
+      .estado[data-estado="5"]::before { content: "publicada"; }
+      .estado[data-estado="6"]::before { content: "cancelada"; }
+
+      .estado::before{
+        color: #ddd;
+        font-weight: 500;
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+
+      .cards-propuestas .colaboracion {
+        padding: 0px;
+        margin: 0px 0px 10px;
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 200;
+        color: #aaa;
+      }
+
+      .cards-propuestas .colaboracion b{
+        color: #888;
+        font-weight: 600;
+      }
+
+      .cards-propuestas .total {
+        padding: 0px;
+        margin: 0px;
+        font-weight: 900;
+        font-size: 15px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: #999;
+      }
+      .cards-propuestas .total::before {
+        content: "$";
+        color: #aaa;
+      }
+
+
+      .estado[data-estado="0"] div span:nth-child(n + 1),
+      .estado[data-estado="1"] div span:nth-child(n + 2),
+      .estado[data-estado="2"] div span:nth-child(n + 3),
+      .estado[data-estado="3"] div span:nth-child(n + 4),
+      .estado[data-estado="4"] div span:nth-child(n + 5),
+      .estado[data-estado="5"] div span:nth-child(n + 6),
+      .estado[data-estado="6"] div span:nth-child(n + 7)
+      { background: #eee; }
+
+      /* cards propuestas footer */
+      .cards-propuestas .footer {
+        border-top: solid 1px #eee;
+        padding: 20px;
+        color: #666;
+        font-weight: 100;
+        display: flex;
+        align-items: center;
+      }
+
+      .cards-propuestas .footer .user-creador {
+        border-radius: 50%;
+        height: 46px;
+        width: 46px;
+        margin-right: 10px;
+      }
+
+      .btn {
+        width: 100%;
+        margin: 0 5px;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+      }
+
+      /* cards seguidor */
+      .cards-seguidor {
+        border: solid 1px #eee;
+        border-radius: 3px;
+        box-shadow: 0px 1px 5px 0px rgba(0,0,0,.05);
+        margin: 10px;
+        width: 300px;
+        transition: all .5s;
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+
+      }
+      .cards-seguidor h1 {
+        display: inline-block;
+        font-size: 20px;
+      }
+      .cards-seguidor .body{
+        padding: 10px;
+      }
+
+      .cards-seguidor.seguidor .body{
+        display: flex;
+        align-items: center;
+        height: 80px;
+      }
+
+      .cards-seguidor .btn {
+        display: inline-block;
+        width: auto;
+        padding: 0px 10px;
+        font-size: 20px;
+        margin: 0;
+        float: right;
+      }
+      .cards-seguidor .user-creador {
+        height: 80px;
+        width: 80px;
+        margin-right: 10px;
+        float: left;
+      }
+      .cards-propuesta-home{
+        border: solid 1px #eee;
+        border-radius: 3px;
+        box-shadow: 0px 1px 5px 0px rgba(0,0,0,.05);
+        margin: 10px;
+        width: 300px;
+        transition: all .5s;
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0) 3%, rgb(0, 0, 0) 100%) !important;
+      }
+
+      /* Cards usuario */
+      .cards-usuario {
+        border: solid 1px #eee;
+        border-radius: 3px;
+        box-shadow: 0px 1px 5px 0px rgba(0,0,0,.05);
+        margin: 10px;
+        padding: 20px;
+        width: 300px;
+        transition: all .5s;
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+      }
+      .cards-usuario  .user-creador {
+        margin: 10px auto;
+        width: 96px;
+        height: 96px;
+        display: block;
+        border-radius: 50%;
+        box-shadow: 0px 1px 5px 0px rgba(0,0,0,.05);
+      }
+      .cards-usuario  .user-type,
+      .cards-usuario  .user-name {
+        text-align: center;
+      }
+      .cards-usuario  .user-type {
+        margin: 0;
+        color: #666
+      }
+      .cards-usuario  .user-name {
+        margin-top: 0;
+      }
+
+      /* pagination */
+      .pagination{
+        margin-bottom: 10px!important;
+
+      }
+      /* heder */
+      nav {
+          box-shadow: 0 3px 2px 0 rgba(0,0,0,0.1), 0 1px 1px 0 rgba(0,0,0,0.11);
+          padding: 5px;
+          background: #fff;
+          border-bottom: solid 3px #333;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      }
+      .logo {
+          margin: 0 10px 0 10PX;
+          float: none;
+          font-size: 20px;
+          padding: 7px 14px;
+          border: solid 2px #333;
+          font-family: 'Cabin Sketch', cursive;
+          display: inline-block;
+          margin: 5px;
+      }
+      /* Tools */
+      .tools > div {
+        display: none;
+      }
+      .tools.search .search,
+      .tools.logeado .logeado,
+      .tools.Visitante .Visitante,
+      .tools .Visitante{
+        display: block;
+      }
+      /* Search */
+      .input-search {
+        border: none;
+        background: #eee;
+        border-radius: 3px;
+        width: 300px;
+        padding: 5px 10px;
+        max-width: 100%;
+      }
+      .button-search {
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+      /* Logeado */
+      .logeado .dropdown-toggle {
+        display: flex;
+        align-items: center;
+      }
+      .logeado .user-creador {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+      }
+      .logeado .name-user {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100px;
+        margin: 5px;
+      }
+      /* Visitante */
+      .Visitante a{
+        color: #999;
+        font-weight: 300;
+        margin: 5px;
+        padding: 5px;
+        outline: none;
+        transition: all .2s;
+      }
+      .Visitante a:hover{
+        text-decoration: none;
+        color: #222;
+        outline: none;
+      }
+
+      .title {
+        color: #fff;
+        text-shadow: 0px 2px 2px rgba(0,0,0,0.4);
+        text-align: center;
+        margin: 30px auto;
+      }
+
+      footer {
+        display: flex;
+        justify-content: center;
+        background: rgba(0,0,0,.1);
+        color: #666;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <nav>
+      <div class="logo">
+        Culturarte
+      </div>
+      <div class="tools">
+        <!-- User logeado-->
+        <div class="logeado dropdown" data-toggle="dropdown" style="width: 150px; text-align: right;">
+           <ul class="dropdown-menu" role="menu">
+             <a class="dropdown-item" href="#">Perfil</a>
+             <a class="dropdown-item" href="#">Favoritos</a>
+             <hr>
+             <a class="dropdown-item" href="#">Salir</a>
+           </ul>
+           <div class="dropdown-toggle" data-toggle="dropdown">
+             <label class="name-user">Nombre Usdfsdfds</label>
+             <img class=" user-creador" src="avatar.png">
+           </div>
+        </div>
+        <!-- Visitante -->
+        <div class="Visitante">
+          <a href="#">Registrares</a>
+          <a href="#">Logearse</a>
+        </div>
+        <!-- Buscar -->
+        <div class="search">
+          <input class="input-search" type="text">
+          <button class="button-search">B</button>
+        </div>
+
+      </div>
+    </nav>
+    <header>
+      <h1 class="title">title</h1>
+    </header>
+    <div class="main">
+      <div class="card-header">
+         <ul class="nav nav-tabs card-header-tabs">
+           <li class="nav-item">
+             <a class="nav-link active" href="#">Active</a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link" href="#">Link</a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link disabled" href="#">Disabled</a>
+           </li>
+         </ul>
+       </div>
+       <div class="card-body">
+
+
+
+         <h5 class="card-title">Special title treatment</h5>
+         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+         <a href="#" class="btn btn-primary">Go somewhere</a>
+       </div>
+      <main class="box-cards-center">
+        <!-- Cards propuestas para colaborador -->
+        <div class="cards-propuestas">
+          <div class="body">
+            <h1>propuesta </h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            <span class="colaboracion">
+              <b>Colaborasion: </b>$100 el 07/10/2018
+            </span>
+            <div class="estado" data-estado="3">
+              <div>
+                  <span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+          <div class="footer">
+            <img class="user-creador" src="avatar.png">
+            Usuario creador
+          </div>
+
+        </div>
+
+        <!-- Cards propuestas para creador -->
+        <div class="cards-propuestas">
+          <div class="body">
+            <span class="total">54</span>
+            <h1>mi propuesta </h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            <div class="estado" data-estado="2">
+              <div>
+                  <span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+          <div class="footer">
+            <button class="btn btn-primary"> Extender </button>
+            <button class="btn btn-danger"> Cancelar </button>
+          </div>
+        </div>
+
+        <!-- Cards mis seguidores -->
+        <div class="cards-seguidor seguidor">
+          <img class="user-creador" src="avatar.png">
+          <div class="body">
+            <h1>me sige </h1>
+          </div>
+        </div>
+
+        <!-- Cards los seguigo -->
+        <div class="cards-seguidor">
+          <img class="user-creador" src="avatar.png">
+          <div class="body">
+            <h1>yo sigo </h1>
+            <button class="btn btn-primary"> Dejar de segir </button>
+          </div>
+        </div>
+
+        <!-- Cards usuario -->
+        <div class="cards-usuario">
+          <img class="user-creador" src="avatar.png">
+          <h6 class="user-type">user-type</h6>
+          <h1 class="user-name">yo sigo </h1>
+        </div>
+      </div>
+    </main>
+    <ul class="pagination justify-content-center">
+      <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1">Previous</a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#">Next</a>
+      </li>
+    </ul>
+    </div>
+    <footer>
+        Copyright (c) 2018 Copyright Holder All Rights Reserved.
+    </footer>
+  </body>
+</html>

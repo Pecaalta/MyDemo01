@@ -1,0 +1,58 @@
+/*
+  Titulo:       Login
+  Description:  Estilo para el formulario de logeo para usuarios
+*/
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background: #F9F9F9;
+  z-index: 0;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+
+}
+
+.form-signin input {
+  margin: 5px 0;
+  border: none;
+  background: rgba(0, 0, 0, 0.05);
+}
+.form-signin .logo {
+  margin: 20px;
+  width: auto;
+}
+.form-signin hr {
+  margin: 20px;
+  padding: 0;
+  width: 100%
+}
+
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}

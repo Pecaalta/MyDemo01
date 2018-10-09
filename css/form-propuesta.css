@@ -1,0 +1,118 @@
+/*
+  Titulo:       Form-usuario
+  Description:  Estilo para el formulario de inscripciones del usuario
+*/
+.form-usuario {
+  padding: 20px;
+}
+.form-usuario h1{
+  margin: 0px 0px 30px 0px;
+}
+.form-usuario p{
+  color: #999;
+  margin: 5px;
+  font-size: 12px;
+}
+.form-usuario .form-check-label{
+  color: #333;
+  font-weight: 700;
+  margin: 5px;
+}
+.form-usuario .btn{
+  width: auto;
+  display: block;
+  margin: 20px auto;
+}
+.form-usuario .marco-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 3px;
+  margin: auto;
+  background: rgba(0,0,0,.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.form-usuario .marco-img img{
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+.form-usuario .marco-img input{
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  opacity: 0;
+}
+.form-usuario .progreso {
+  width: 100%;
+  height: 10px;
+  border-radius: 3px;
+  margin: 0 0 14px 0;
+  background: #666;
+  display: block;
+  overflow: hidden;
+}
+.form-usuario .progreso:after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: red
+}
+label {
+  color: #999;
+}
+
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 5px;
+}
+
+input[type="range"]:hover {
+    opacity: 1;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #007aff;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #007aff;
+    cursor: pointer;
+}
+
+
+/* Estado por defecto del formulario */
+.form-usuario .page { display: none; }
+.form-usuario.info .proponente { display: none; }
+
+
+.form-usuario.categoria .categoria            { display: block; }
+.form-usuario.categoria .progreso:after  { width: 0%;     }
+.form-usuario.info .info            { display: block; }
+.form-usuario.info .progreso:after  { width: 33%;     }
+.form-usuario.retorno .retorno              { display: block; }
+.form-usuario.retorno .progreso:after   { width: 66%;    }
+
+.form-usuario.info .info.proponente .proponente
+{ display: block; }

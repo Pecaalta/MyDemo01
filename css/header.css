@@ -1,0 +1,79 @@
+/*
+  Titulo:       Header
+  Description:  Componente para aser de nav
+*/
+
+nav {
+    box-shadow: 0 3px 2px 0 rgba(0,0,0,0.1), 0 1px 1px 0 rgba(0,0,0,0.11);
+    padding: 5px;
+    background: #fff;
+    border-bottom: solid 3px #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    margin: 0 10px 0 10PX;
+    float: none;
+    font-size: 20px;
+    padding: 7px 14px;
+    border: solid 2px #333;
+    font-family: 'Cabin Sketch', cursive;
+    display: inline-block;
+    margin: 5px;
+}
+/* Tools */
+.tools > div {
+  display: none;
+}
+.tools.search .search,
+.tools.logeado .logeado,
+.tools.Visitante .Visitante,
+.tools .Visitante{
+  display: block;
+}
+/* Search */
+.input-search {
+  border: none;
+  background: #eee;
+  border-radius: 3px;
+  width: 300px;
+  padding: 5px 10px;
+  max-width: 100%;
+}
+.button-search {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+/* Logeado */
+.logeado .dropdown-toggle {
+  display: flex;
+  align-items: center;
+}
+.logeado .user-creador {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+.logeado .name-user {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100px;
+  margin: 5px;
+}
+/* Visitante */
+.Visitante a{
+  color: #999;
+  font-weight: 300;
+  margin: 5px;
+  padding: 5px;
+  outline: none;
+  transition: all .2s;
+}
+.Visitante a:hover{
+  text-decoration: none;
+  color: #222;
+  outline: none;
+}

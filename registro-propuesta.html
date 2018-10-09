@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./css/cards-propuesta.css">
+    <link rel="stylesheet" href="./css/cards-seguir.css">
+    <link rel="stylesheet" href="./css/cards-usuario.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/msg.css">
+    <link rel="stylesheet" href="./css/pagination.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/title.css">
+    <link rel="stylesheet" href="./css/form-propuesta.css">
+
+
+    <!-- MetaData -->
+    <title>Culturarte-G4</title>
+    <meta name="description" content="Web para el obligatorio 2">
+    <meta name="keywords" content="HTML,CSS,JavaScript,jQuery,Popper,Bootstrap">
+    <meta name="author" content="G-4">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+
+      header{
+        background: url(./img/gb-user.jpg);
+      }
+      .list-group-item {
+        user-select: none;
+      }
+
+      .list-group input[type="checkbox"] {
+        display: none;
+      }
+
+      .list-group input[type="checkbox"] + .list-group-item {
+        cursor: pointer;
+      }
+
+      .list-group input[type="checkbox"] + .list-group-item:before {
+        content: "\2713";
+        color: transparent;
+        font-weight: bold;
+        margin-right: 1em;
+      }
+
+      .list-group input[type="checkbox"]:checked + .list-group-item {
+        background-color: #0275D8;
+        color: #FFF;
+      }
+
+      .list-group input[type="checkbox"]:checked + .list-group-item:before {
+        color: inherit;
+      }
+
+      .list-group input[type="radio"] {
+        display: none;
+      }
+
+
+      .list-group input[type="radio"]:checked + .list-group-item {
+        background-color: #0275D8;
+        color: #FFF;
+      }
+
+      .list-group input[type="radio"]:checked + .list-group-item:before {
+        color: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Nav -->
+    <nav>
+      <div class="logo">
+        Culturarte
+      </div>
+      <div class="tools">
+        <!-- User logeado-->
+        <div class="logeado dropdown" data-toggle="dropdown" style="width: 150px; text-align: right;">
+           <ul class="dropdown-menu" role="menu">
+             <a class="dropdown-item" href="#">Perfil</a>
+             <a class="dropdown-item" href="#">Favoritos</a>
+             <hr>
+             <a class="dropdown-item" href="#">Salir</a>
+           </ul>
+           <div class="dropdown-toggle" data-toggle="dropdown">
+             <label class="name-user">Nombre Usdfsdfds</label>
+             <img class=" user-creador" src="avatar.png">
+           </div>
+        </div>
+        <!-- Visitante -->
+        <div class="Visitante">
+          <a href="registro-usuario.html">Registrares</a>
+          <a href="login.html">Logearse</a>
+        </div>
+        <!-- Buscar -->
+        <div class="search">
+          <input class="input-search" type="text">
+          <button class="button-search">B</button>
+        </div>
+
+      </div>
+    </nav>
+
+    <!-- Msg -->
+    <div class="msg hidden">
+      <p class="body"></p>
+      <button class="btn btn-primary"> Salir </button>
+    </div>
+
+    <header>
+      <h1 class="title">Registro de usuario</h1>
+    </header>
+    <form class="form-usuario main retorno">
+      <div class="progreso">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="page categoria">
+        <h1>categoria</h1>
+        <select multiple class="form-control" id="exampleFormControlSelect1">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <button class="btn btn-primary">Siginte</button>
+      </div>
+      <div class="page info">
+        <h1>Informacion</h1>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="titulo">Titulo</label>
+            <input type="text" class="form-control" id="titulo" placeholder="Titulo" value="" required="">
+            <div class="invalid-feedback">
+              El titulo no es valido.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lugar">Lugar</label>
+            <input type="text" class="form-control" id="lugar" placeholder="Lugar" value="" required="">
+            <div class="invalid-feedback">
+                El lugar no es valido.
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="precioEntrada">Precio entrada</label>
+              <input type="precioEntrada" class="form-control" id="precioEntrada" placeholder="10">
+              <div class="invalid-feedback">
+                  El campo precio entrada no es valido.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="fechaPrevista">Fecha prevista</label>
+              <input type="datetime-datetime-local" class="form-control" id="fechaPrevista" placeholder="Fecha prevista">
+              <div class="invalid-feedback">
+                  El campo fecha prevista no es valido.
+              </div>
+            </div>
+        </div>
+        <div class="mb-3">
+          <label for="montoNecesario">Monto necesario</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="montoNecesario" placeholder="1000000" required="">
+            <div class="invalid-feedback" style="width: 100%;">
+                El monto no es valido.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="descripcion">Descripcion</label>
+          <input type="datetime-datetime-local" class="form-control" id="descripcion" placeholder="Descripcion">
+          <div class="invalid-feedback">
+              El descripcion no es valido.
+          </div>
+        </div>
+
+        <button class="btn btn-primary">Siginte</button>
+      </div>
+      <div class="page retorno">
+        <h1>Retorno</h1>
+        <div class="form-group">
+          <label for="formControlRange">Porsentaje 10</label>
+          <input step="1" min="0" max="100" type="range" class="form-control-range" id="formControlRange">
+        </div>
+        <div class="d-flex justify-content-center">
+          <hr class="col-4">
+          <span class="col-1"> O </span>
+          <hr class="col-4">
+        </div>
+        <label for="exampleFormControlSelect1">Numero de entradas</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+
+        <button class="btn btn-primary">Listo</button>
+      </div>
+    </form>
+
+  </body>
+</html>

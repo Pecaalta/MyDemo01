@@ -1,0 +1,80 @@
+/*
+  Titulo:       Form-usuario
+  Description:  Estilo para el formulario de inscripciones del usuario
+*/
+.form-usuario {
+  padding: 20px;
+}
+.form-usuario h1{
+  margin: 0px 0px 30px 0px;
+}
+.form-usuario p{
+  color: #999;
+  margin: 5px;
+  font-size: 12px;
+}
+.form-usuario .form-check-label{
+  color: #333;
+  font-weight: 700;
+  margin: 5px;
+}
+.form-usuario .btn{
+  width: auto;
+  display: block;
+  margin: 20px auto;
+}
+.form-usuario .marco-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 3px;
+  margin: auto;
+  background: rgba(0,0,0,.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.form-usuario .marco-img img{
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+.form-usuario .marco-img input{
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  opacity: 0;
+}
+.form-usuario .progreso {
+  width: 100%;
+  height: 10px;
+  border-radius: 3px;
+  margin: 0 0 14px 0;
+  background: #666;
+  display: block;
+  overflow: hidden;
+}
+.form-usuario .progreso:after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: red
+}
+
+
+/* Estado por defecto del formulario */
+.form-usuario .page { display: none; }
+.form-usuario.info .proponente { display: none; }
+
+
+.form-usuario.type .type            { display: block; }
+.form-usuario.type .progreso:after  { width: 0%;     }
+.form-usuario.info .info            { display: block; }
+.form-usuario.info .progreso:after  { width: 33%;     }
+.form-usuario.img .img              { display: block; }
+.form-usuario.img .progreso:after   { width: 66%;    }
+
+.form-usuario.info .info.proponente .proponente
+{ display: block; }

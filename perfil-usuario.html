@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./css/cards-propuesta.css">
+    <link rel="stylesheet" href="./css/cards-usuario.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/msg.css">
+    <link rel="stylesheet" href="./css/pagination.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/title.css">
+    <link rel="stylesheet" href="./css/form-propuesta.css">
+    <link rel="stylesheet" href="./css/cards-seguir.css">
+
+
+    <!-- MetaData -->
+    <title>Culturarte-G4</title>
+    <meta name="description" content="Web para el obligatorio 2">
+    <meta name="keywords" content="HTML,CSS,JavaScript,jQuery,Popper,Bootstrap">
+    <meta name="author" content="G-4">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+
+      header{
+        background: url(./img/gb-user.jpg);
+      }
+      .flex-column {
+        padding: 0px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- Nav -->
+    <nav>
+      <div class="logo">
+        Culturarte
+      </div>
+      <div class="tools">
+        <!-- User logeado-->
+        <div class="logeado dropdown" data-toggle="dropdown" style="width: 150px; text-align: right;">
+           <ul class="dropdown-menu" role="menu">
+             <a class="dropdown-item" href="#">Perfil</a>
+             <a class="dropdown-item" href="#">Favoritos</a>
+             <hr>
+             <a class="dropdown-item" href="#">Salir</a>
+           </ul>
+           <div class="dropdown-toggle" data-toggle="dropdown">
+             <label class="name-user">Nombre Usdfsdfds</label>
+             <img class=" user-creador" src="avatar.png">
+           </div>
+        </div>
+        <!-- Visitante -->
+        <div class="Visitante">
+          <a href="registro-usuario.html">Registrares</a>
+          <a href="login.html">Logearse</a>
+        </div>
+        <!-- Buscar -->
+        <div class="search">
+          <input class="input-search" type="text">
+          <button class="button-search">B</button>
+        </div>
+
+      </div>
+    </nav>
+
+    <!-- Msg -->
+    <div class="msg hidden">
+      <p class="body"></p>
+      <button class="btn btn-primary"> Salir </button>
+    </div>
+
+    <header>
+      <h1 class="title">Registro de usuario</h1>
+    </header>
+    <form class="form-usuario container">
+      <div class="row">
+        <div class="col-8 main card ">
+          <div class="tab-content" id="v-pills-tabContent">
+              <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+
+asdasds
+              </div>
+              <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+
+                <div class="box-cards-center">
+                  <div class="cards-seguidor">
+                    <img class="user-creador" src="avatar.png">
+                    <div class="body">
+                      <h6>yo sigo </h6>
+                      <button class="btn btn-primary"> Dejar de segir </button>
+                    </div>
+                  </div>
+                  <div class="cards-seguidor">
+                    <img class="user-creador" src="avatar.png">
+                    <div class="body">
+                      <h6>yo sigo </h6>
+                      <button class="btn btn-primary"> Dejar de segir </button>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+              <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+
+                <div class="box-cards-center">
+                  <div class="cards-seguidor">
+                    <img class="user-creador" src="avatar.png">
+                    <div class="body">
+                      <h1>yo sigo </h1>
+                    </div>
+                  </div>
+                  <div class="cards-seguidor">
+                    <img class="user-creador" src="avatar.png">
+                    <div class="body">
+                      <h1>yo sigo </h1>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+
+asdasd
+              </div>
+            </div>
+        </div>
+        <div class="col-4">
+          <div class="card cards-usuario">
+            <img class="user-creador" src="avatar.png">
+            <h6 class="user-type">user-type</h6>
+            <h1 class="user-name">yo sigo </h1>
+          </div>
+          <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Informacion</a>
+            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Segidores</a>
+            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Sigo</a>
+            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Favoritos</a>
+            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Creacion</a>
+          </div>
+        </div>
+      </div>
+
+    </form>
+
+  </body>
+</html>

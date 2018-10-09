@@ -1,0 +1,11 @@
+/*
+  Titulo:       Footer
+  Description:  Componente para las footer
+*/
+footer {
+  display: flex;
+  justify-content: center;
+  background: rgba(0,0,0,.1);
+  color: #666;
+  padding: 10px;
+}

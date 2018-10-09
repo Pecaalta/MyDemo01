@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./css/cards-propuesta.css">
+    <link rel="stylesheet" href="./css/cards-seguir.css">
+    <link rel="stylesheet" href="./css/cards-usuario.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/msg.css">
+    <link rel="stylesheet" href="./css/pagination.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/title.css">
+    <link rel="stylesheet" href="./css/form-usuario.css">
+
+
+    <!-- MetaData -->
+    <title>Culturarte-G4</title>
+    <meta name="description" content="Web para el obligatorio 2">
+    <meta name="keywords" content="HTML,CSS,JavaScript,jQuery,Popper,Bootstrap">
+    <meta name="author" content="G-4">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+
+      header{
+        background: url(./img/gb-user.jpg);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Nav -->
+    <nav>
+      <div class="logo">
+        Culturarte
+      </div>
+      <div class="tools">
+        <!-- User logeado-->
+        <div class="logeado dropdown" data-toggle="dropdown" style="width: 150px; text-align: right;">
+           <ul class="dropdown-menu" role="menu">
+             <a class="dropdown-item" href="#">Perfil</a>
+             <a class="dropdown-item" href="#">Favoritos</a>
+             <hr>
+             <a class="dropdown-item" href="#">Salir</a>
+           </ul>
+           <div class="dropdown-toggle" data-toggle="dropdown">
+             <label class="name-user">Nombre Usdfsdfds</label>
+             <img class=" user-creador" src="avatar.png">
+           </div>
+        </div>
+        <!-- Visitante -->
+        <div class="Visitante">
+          <a href="registro-usuario.html">Registrares</a>
+          <a href="login.html">Logearse</a>
+        </div>
+        <!-- Buscar -->
+        <div class="search">
+          <input class="input-search" type="text">
+          <button class="button-search">B</button>
+        </div>
+
+      </div>
+    </nav>
+
+    <!-- Msg -->
+    <div class="msg hidden">
+      <p class="body"></p>
+      <button class="btn btn-primary"> Salir </button>
+    </div>
+
+    <header>
+      <h1 class="title">Registro de usuario</h1>
+    </header>
+    <form class="form-usuario main img">
+      <div class="progreso">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="page type">
+        <h1>Tipo</h1>
+        <p>
+          Quien tiene un perfil proponente se registra en la plataforma podra
+          buscar financiación para sus propuestas culturales.
+        </p>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <label class="form-check-label" for="inlineRadio1">Colaborador</label>
+        </div>
+        <p>
+          Quien tiene un perfil colaborador podra buscar proyectos culturales en
+          los cuales colaborar aportando financiación.</p>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <label class="form-check-label" for="inlineRadio2">Proponente</label>
+        </div>
+        <button class="btn btn-primary">Siginte</button>
+      </div>
+      <div class="page info proponente">
+        <h1>Informacion</h1>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Nombre" value="" required="">
+            <div class="invalid-feedback">
+              El nombre no es valido.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="apellido">Apellido</label>
+            <input type="text" class="form-control" id="apellido" placeholder="Apellido" value="" required="">
+            <div class="invalid-feedback">
+                El apellido no es valido.
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Email@ejemplo.com">
+              <div class="invalid-feedback">
+                  El email no es valido.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="fnac">Fecha Naciminto</label>
+              <input type="datetime-datetime-local" class="form-control" id="fnac" placeholder="Fecha Naciminto">
+              <div class="invalid-feedback">
+                  El Fecha Naciminto no es valido.
+              </div>
+            </div>
+        </div>
+        <div class="mb-3">
+          <label for="nick">Nick</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="nick" placeholder="Nick" required="">
+            <div class="invalid-feedback" style="width: 100%;">
+                El nick no es valido.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 proponente">
+          <label for="url">Url</label>
+          <input type="text" class="form-control" id="url" placeholder="Url" required="">
+          <div class="invalid-feedback">
+            El Url no es valido.
+          </div>
+        </div>
+        <div class="mb-3 proponente">
+          <label for="link">link</label>
+          <input type="datetime-datetime-local" class="form-control" id="link" placeholder="direccion">
+          <div class="invalid-feedback">
+            link es recerida.
+          </div>
+        </div>
+        <div class="mb-3 proponente">
+          <label for="Biografia">Biografia</label>
+          <input type="datetime-datetime-local" class="form-control" id="Biografia" placeholder="direccion">
+          <div class="invalid-feedback">
+              El Biografia no es valido.
+          </div>
+        </div>
+
+        <button class="btn btn-primary">Siginte</button>
+      </div>
+      <div class="page img">
+        <h1>Imagen</h1>
+        <p>La imagen no es obligatoria</p>
+          <div class="marco-img">
+            <img src="avatar.png">
+            <input type="file">
+          </div>
+          <button class="btn btn-primary">Listo</button>
+      </div>
+    </form>
+
+  </body>
+</html>

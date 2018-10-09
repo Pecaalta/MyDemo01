@@ -1,0 +1,37 @@
+/*
+  Titulo:       Cards usuario
+  Description:  Componente Cards usuario, ideado para usar en perfil
+*/
+
+.cards-usuario {
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,.05);
+  margin: 10px 0;
+  padding: 20px;
+  width: 100%;
+  transition: all .5s;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+.cards-usuario  .user-creador {
+  margin: 10px auto;
+  width: 96px;
+  height: 96px;
+  display: block;
+  border-radius: 50%;
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,.05);
+}
+.cards-usuario  .user-type,
+.cards-usuario  .user-name {
+  text-align: center;
+}
+.cards-usuario  .user-type {
+  margin: 0;
+  color: #666
+}
+.cards-usuario  .user-name {
+  margin-top: 0;
+}
